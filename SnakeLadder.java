@@ -7,6 +7,12 @@ public class SnakeLadder {
         return num;
     }
 
+    int optionGeneration() {
+        Random random = new Random();
+        int option = random.nextInt(3);
+        return option;
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Snake and Ladder game");
         int pos = 0;
