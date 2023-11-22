@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 public class SnakeLadder {
     int diceRoll() {
@@ -16,6 +17,9 @@ public class SnakeLadder {
     void game() {
         int pos = 0;
         SnakeLadder sl = new SnakeLadder();
+        ArrayList<Integer> positions = new ArrayList<>();
+        positions.add(pos);
+        int diceRollCnt = 0;
 
         while (pos != 100) {
             int diceNum = sl.diceRoll();
@@ -29,8 +33,10 @@ public class SnakeLadder {
                 pos = 0;
             if (pos > 100)
                 pos -= diceNum;
+            positions.add(pos);
+            diceRollCnt++;
         }
-
+        return;
     }
 
     public static void main(String[] args) {
