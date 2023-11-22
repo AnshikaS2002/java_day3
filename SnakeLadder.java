@@ -17,7 +17,7 @@ public class SnakeLadder {
         int pos = 0;
         SnakeLadder sl = new SnakeLadder();
 
-        while (pos < 100) {
+        while (pos != 100) {
             int diceNum = sl.diceRoll();
             int option = sl.optionGeneration();
             if (option == 1) {
@@ -25,9 +25,10 @@ public class SnakeLadder {
             } else if (option == 2) {
                 pos -= diceNum;
             }
-            if (pos < 0) {
+            if (pos < 0)
                 pos = 0;
-            }
+            if (pos > 100)
+                pos -= diceNum;
         }
 
     }
